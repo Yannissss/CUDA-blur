@@ -70,13 +70,8 @@ int main(int argc, char **argv) {
     // Application filtres
 
     // Echauffement
-    {
-        float _0;
-        Out = b_deep_copy(In);
-        printf("Echauffement (~ 1s)...\n");
-        echauffement();
-        bclose(Out);
-    }
+    printf("Echauffement (~ 1s)...\n");
+    echauffement();
     // Niveau de gris
     {
         Out = b_deep_copy(In);
