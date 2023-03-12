@@ -1,4 +1,4 @@
-TARGET_EXEC ?= nv-flou
+TARGET_EXEC ?= cuda-flou
 
 BUILD_DIR ?= ./build
 SRC_DIRS ?= ./src
