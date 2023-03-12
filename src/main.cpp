@@ -48,9 +48,6 @@ int main(int argc, char **argv) {
     int bytes;
     char nomIn[100], nomOut[100];
 
-    // Récupération des paramètres
-    // TODO
-
     // fonctionne avec le nom de fichier par defaut "monImage.bmp"
     strcpy(nomIn, "./images/monImage");
     strcat(nomIn, ".bmp");
@@ -70,15 +67,11 @@ int main(int argc, char **argv) {
     // Application filtres
 
     // Echauffement
-    {
-        float _0;
-        Out = b_deep_copy(In);
-        printf("Echauffement (~ 1s)...\n");
-        echauffement();
-        bclose(Out);
-    }
+    printf("Echauffement (~ 1s)...\n");
+    echauffement();
     // Niveau de gris
     {
+        printf("\n");
         Out = b_deep_copy(In);
         bench(In, Out, "niveauDeGris",
               DEFAULT_THREADS_PER_BLOCK * DEFAULT_THREADS_PER_BLOCK,
@@ -90,6 +83,7 @@ int main(int argc, char **argv) {
     }
     // Blur naif
     {
+        printf("\n");
         Out = b_deep_copy(In);
         bench(In, Out, "blurGPU_naif",
               DEFAULT_THREADS_PER_BLOCK * DEFAULT_THREADS_PER_BLOCK,
@@ -103,6 +97,7 @@ int main(int argc, char **argv) {
     }
     // Blur shared
     {
+        printf("\n");
         Out = b_deep_copy(In);
         bench(In, Out, "blurGPU_shared", TILE_SIZE * TILE_SIZE, bytes,
               ((width + TILE_SIZE - 1) / TILE_SIZE) *
