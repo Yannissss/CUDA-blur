@@ -24,7 +24,7 @@ make
 
 Lancer le programme avec ```srun -N 1 --gres=gpu:1 ./cuda-flou```:
 
-Exemple de sourtie:
+Exemple de sortie:
 ```
 Ouverture de l'image ./images/monImage.bmp
 Taille de l'image : 1280 x 720
